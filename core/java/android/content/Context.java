@@ -3662,7 +3662,6 @@ public abstract class Context {
      */
     public static final String OVERLAY_SERVICE = "overlay";
 
-    
     /**
      * Determine whether the given permission is allowed for a particular
      * process and user ID running in the system.
