@@ -6600,9 +6600,8 @@ status_t ResTable::createIdmap(const ResTable& overlay,
                 "cannot create idmap\n");
         return UNKNOWN_ERROR;
     }
-    //oms init
+
     bool isDangerous = false;
-    
     KeyedVector<uint8_t, IdmapTypeMap> map;
 
     // overlaid packages are assumed to contain only one package group
@@ -6677,7 +6676,7 @@ status_t ResTable::createIdmap(const ResTable& overlay,
                 }
             }
             typeMap.entryMap.add(Res_GETENTRY(overlayResID));
-          //oms init
+
             Entry entry;
             if (getEntry(pg, typeIndex, entryIndex, NULL, &entry)) {
                 return UNKNOWN_ERROR;
@@ -6757,7 +6756,7 @@ bool ResTable::getIdmapInfo(const void* idmap, size_t sizeBytes,
     }
     if (pVersion) {
         *pVersion = dtohl(map[1]);
-    }    
+    }
     if (pDangerous) {
         *pDangerous = dtohl(map[2]);
     }
