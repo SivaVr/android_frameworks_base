@@ -3090,7 +3090,8 @@ public class Intent implements Parcelable, Cloneable {
      */
     public static final String ACTION_MEDIA_RESOURCE_GRANTED =
             "android.intent.action.MEDIA_RESOURCE_GRANTED";
- /**
+
+    /**
      * Broadcast Action: An overlay package has been installed. The data
      * contains the name of the added overlay package.
      * @hide
@@ -3116,7 +3117,7 @@ public class Intent implements Parcelable, Cloneable {
     public static final String ACTION_OVERLAY_REMOVED = "android.intent.action.OVERLAY_REMOVED";
 
     /**
-    * Broadcast Action: The order of a package's list of overlay packages has
+     * Broadcast Action: The order of a package's list of overlay packages has
      * changed. The data contains the package name of the overlay package that
      * had its position in the list adjusted.
      * @hide
