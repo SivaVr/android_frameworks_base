@@ -187,7 +187,13 @@ namespace {
             return err;
         }
         print("", "version", i, "");
-
+//oms init
+        err = buf.nextUint32(&i);
+        if (err != NO_ERROR) {
+            return err;
+        }
+        print("", "dangerous", i, "");
+        
         err = buf.nextUint32(&i);
         if (err != NO_ERROR) {
             return err;
