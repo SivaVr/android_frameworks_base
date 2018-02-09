@@ -8213,7 +8213,6 @@ public class WindowManagerService extends IWindowManager.Stub
         mPolicy.setSafeMode(mSafeMode);
         return mSafeMode;
     }
-    
     public boolean detectDisableOverlays() {
         if (!mInputMonitor.waitForInputDevicesReady(
                 INPUT_DEVICES_READY_FOR_SAFE_MODE_DETECTION_TIMEOUT_MILLIS)) {
@@ -8234,7 +8233,6 @@ public class WindowManagerService extends IWindowManager.Stub
 
         return mDisableOverlays;
     }
-
     public void displayReady() {
         for (Display display : mDisplays) {
             displayReady(display.getDisplayId());
