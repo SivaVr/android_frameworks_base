@@ -159,6 +159,10 @@ public class VolumeDialogComponent implements VolumeComponent, TunerService.Tuna
         mController.dump(fd, pw, args);
         mDialog.dump(pw);
     }
+    @Override
+    public void updateDialog() {
+        mDialog.updateDialog();
+    }
 
     private void startSettings(Intent intent) {
         mSysui.getComponent(PhoneStatusBar.class).startActivityDismissingKeyguard(intent,
