@@ -16,6 +16,7 @@ package com.android.systemui.qs.customize;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.ThemeManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -467,11 +468,12 @@ public class TileAdapter extends RecyclerView.Adapter<Holder> implements TileSta
 
     private class TileItemDecoration extends ItemDecoration {
         private final ColorDrawable mDrawable;
-
+        private int mAdapterBackground;
         private TileItemDecoration(Context context) {
             TypedArray ta =
                     context.obtainStyledAttributes(new int[]{android.R.attr.colorSecondary});
-            mDrawable = new ColorDrawable();
+            mDrawable = new ColorDrawable(ta.getColor(0, 0));
+            mAdapterBackground = ta.getColor(0, 0);
             ta.recycle();
         }
 
