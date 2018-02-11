@@ -56,6 +56,7 @@ import com.android.server.FgThread;
 import com.android.server.IoThread;
 import com.android.server.LocalServices;
 import com.android.server.SystemService;
+import com.android.server.ThemeService;
 import com.android.server.pm.Installer;
 import com.android.server.pm.UserManagerService;
 
@@ -211,10 +212,13 @@ public final class OverlayManagerService extends SystemService {
     private final OverlayManagerServiceImpl mImpl;
 
     private final AtomicBoolean mPersistSettingsScheduled = new AtomicBoolean(false);
+    
+    private Context mContext;
 
     public OverlayManagerService(@NonNull final Context context,
             @NonNull final Installer installer) {
         super(context);
+        mContext = context;
         mSettingsFile =
             new AtomicFile(new File(Environment.getDataSystemDirectory(), "overlays.xml"));
         mPackageManager = new PackageManagerHelper();
@@ -461,7 +465,7 @@ public final class OverlayManagerService extends SystemService {
             if (packageName == null) {
                 return false;
             }
-
+            ThemeService.returnToDefaultTheme(mContext);
             final long ident = Binder.clearCallingIdentity();
             try {
                 synchronized (mLock) {
