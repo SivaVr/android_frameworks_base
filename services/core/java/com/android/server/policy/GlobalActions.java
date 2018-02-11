@@ -149,7 +149,8 @@ public class GlobalActions implements DialogInterface.OnDismissListener, DialogI
 
     private BitSet mAirplaneModeBits;
     private final List<PhoneStateListener> mPhoneStateListeners = new ArrayList<>();
-    
+    private static int sTheme;
+
     private final IThemeCallback mThemeCallback = new IThemeCallback.Stub() {
 
         @Override
