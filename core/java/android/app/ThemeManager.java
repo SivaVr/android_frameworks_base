@@ -21,6 +21,7 @@ import android.content.om.OverlayInfo;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
+import android.provider.Settings;
 
 import java.util.ArrayList;
 
@@ -89,7 +90,6 @@ import java.util.ArrayList;
  * @author Anas Karbila
  * @hide
  */
-
 public class ThemeManager {
 
     private static final String TAG = "ThemeManager";
