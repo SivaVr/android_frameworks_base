@@ -89,6 +89,7 @@ import java.util.ArrayList;
  * @author Anas Karbila
  * @hide
  */
+
 public class ThemeManager {
 
     private static final String TAG = "ThemeManager";
@@ -101,6 +102,16 @@ public class ThemeManager {
         mService = service;
     }
 
+    public static boolean shouldOverlayEnabled(Context context) {
+        if (Settings.Secure.getInt(context.getContentResolver(),
+                Settings.Secure.THEME_FORCE_ENABLED, 0) == 1)
+        {
+          return false;
+        }
+
+        return isOverlayEnabled();
+    }
+    
     public static boolean isOverlayEnabled() {
         final IOverlayManager om = IOverlayManager.Stub.asInterface(ServiceManager
                 .getService("overlay"));
