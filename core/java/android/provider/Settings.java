@@ -6533,6 +6533,35 @@ public final class Settings {
                 "managed_profile_contact_remote_search";
 
         /**
+         * Whether dark theme is enabled or not
+         *
+         * @hide
+         */
+        public static final String THEME_PRIMARY_COLOR = "theme_primary_color";
+
+        /**
+         * Whether accent colors for themes are enabled or not
+         *
+         * @hide
+         */
+        public static final String THEME_ACCENT_COLOR = "theme_accent_color";
+
+        /**
+         * Whether accent colors or dark mode is supposed to show first
+         *
+         * @hide
+         */
+        public static final String THEME_SETTINGS_MODE = "theme_settings_mode";
+        
+         /**
+         * Whether accent colors or dark mode should forcibly be enabled
+         * nonetheless OMS state.
+         *
+         * @hide
+         */
+        public static final String THEME_FORCE_ENABLED = "theme_force_enabled";
+        
+        /**
          * Whether or not the automatic storage manager is enabled and should run on the device.
          *
          * @hide
@@ -6617,6 +6646,12 @@ public final class Settings {
          * @hide
          */
         public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
+
+        /**
+         * Force authorize Substratum (or equivalent) frontend calling packages by Masquerade
+         * @hide
+         */
+        public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
 
         /**
          * This are the settings to be backed up.
